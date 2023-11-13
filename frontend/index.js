@@ -44,8 +44,21 @@ if (learnerContainer) {
   });
 }
 }
-// ❗ DO NOT CHANGE THE CODE  BELOW
-if (typeof module !== 'undefined' && module.exports) module.exports = { sprintChallenge5 }
-else sprintChallenge5()
 
+
+import { getByText } from '@testing-library/dom';
+
+test('footer text is "© BLOOM INSTITUTE OF TECHNOLOGY 2023"', () => {
+  const footer = getByText(document.body, '© BLOOM INSTITUTE OF TECHNOLOGY 2023', {
+    container: document.querySelector('footer'),
+  });
+
+  expect(footer).toBeInTheDocument();
+});
+// ❗ DO NOT CHANGE THE CODE  BELOW
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { sprintChallenge5 };
+} else {
+  sprintChallenge5();
+}
 
