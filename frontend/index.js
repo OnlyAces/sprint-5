@@ -31,16 +31,17 @@ const combinedData = learners.map(learner => {
 
 // 3. Render repeatable components to the DOM using the combined data
 const learnerContainer = document.querySelector('.learners-container');
-combinedData.forEach(learner => {
-  const learnerElement = document.createElement('div');
-  learnerElement.textContent = `${learner.fullName} (${learner.email})`;
+if (learnerContainer) {
+  combinedData.forEach(learner => {
+    const learnerElement = document.createElement('div');
+    learnerElement.textContent = `${learner.fullName} (${learner.email})`;
 
-  learnerElement.addEventListener('click', () => {
-    // Do something when a learner is clicked
+    learnerElement.addEventListener('click', () => {
+      // Do something when a learner is clicked
+    });
+
+    learnerContainer.appendChild(learnerElement);
   });
-
-  learnerContainer.appendChild(learnerElement);
-});
 }
 
 // ❗ DO NOT CHANGE THE CODE  BELOW
