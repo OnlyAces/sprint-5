@@ -1,6 +1,6 @@
 async function sprintChallenge5() {
   
-  const { learners, mentors } = require('./data.js');
+ 
 
   
   const combinedData = learners.map(learner => {
