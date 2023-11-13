@@ -1,6 +1,18 @@
 async function sprintChallenge5() {
   // This function is used to fetch data from the API and render it to the DOM.
+const learnersContainer = document.querySelector('.learners-container');
+if (learnersContainer) {
+  combinedData.forEach(learner => {
+    const learnerElement = document.createElement('div');
+    learnerElement.textContent = `${learner.fullName} (${learner.email})`;
 
+    learnerElement.addEventListener('click', () => {
+      // Do something when a learner is clicked
+    });
+
+    learnersContainer.appendChild(learnerElement);
+  });
+}
   // 1. Fetch data from the API
   const response1 = await axios.get('http://localhost:3003/api/learners');
   const learners = response1.data;
