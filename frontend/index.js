@@ -1,13 +1,31 @@
-async function sprintChallenge5() { // Note the async keyword, in case you wish to use `await` inside sprintChallenge5
-  // 👇 WORK WORK BELOW THIS LINE 👇
+async function sprintChallenge5() {
+  a
+  const { learners, mentors } = require('./data.js');
 
-  const footer = document.querySelector('footer')
-  const currentYear = new Date().getFullYear()
-  footer.textContent = `© BLOOM INSTITUTE OF TECHNOLOGY ${currentYear}`
+  
+  const combinedData = learners.map(learner => {
+    return {
+      ...learner,
+      mentorDetails: learner.mentors.map(mentorId => 
+        mentors.find(mentor => mentor.id === mentorId))
+    };
+  });
 
-  // 👆 WORK WORK ABOVE THIS LINE 👆
+  
+  const learnersContainer = document.querySelector('.learners-container'); 
+  combinedData.forEach(learner => {
+    const learnerElement = document.createElement('div');
+    learnerElement.textContent = `${learner.fullName} (${learner.email})`;
+    
+  
+    learnerElement.addEventListener('click', () => {
+    
+    });
+
+
+    learnersContainer.appendChild(learnerElement);
+  });
 }
 
-// ❗ DO NOT CHANGE THE CODE  BELOW
-if (typeof module !== 'undefined' && module.exports) module.exports = { sprintChallenge5 }
-else sprintChallenge5()
+
+sprintChallenge5();
