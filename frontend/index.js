@@ -43,7 +43,9 @@ if (learnerContainer) {
     learnerContainer.appendChild(learnerElement);
   });
 }
-
+}
 // ❗ DO NOT CHANGE THE CODE  BELOW
 if (typeof module !== 'undefined' && module.exports) module.exports = { sprintChallenge5 }
 else sprintChallenge5()
+
+
