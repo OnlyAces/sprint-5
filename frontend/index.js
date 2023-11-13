@@ -1,5 +1,5 @@
 async function sprintChallenge5() {
-  a
+  
   const { learners, mentors } = require('./data.js');
 
   
